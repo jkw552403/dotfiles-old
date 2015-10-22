@@ -44,5 +44,7 @@ sudo apt-get install spotify-client
 
 #vim-instant
 sudo apt-get install nodejs npm
+#exuberant-ctags for vim
+sudo apt-get install exuberant-ctags
 
 ./install.sh

@@ -49,5 +49,7 @@ brew cask install spotify
 
 #vim-instant
 sudo apt-get install nodejs npm
+#exuberant-ctags for vim
+brew install ctags-exuberant
 
 ./install.sh
