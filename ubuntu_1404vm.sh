@@ -1,5 +1,6 @@
 #git
 sudo apt-get install git
+cp git/.gitignore ~/
 
 #zsh
 sudo apt-get install zsh
