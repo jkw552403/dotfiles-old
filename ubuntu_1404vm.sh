@@ -11,6 +11,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 sudo apt-get install htop
 
 #tmux setting
-cp tmux/.tmux18.conf
+cp tmux/.tmux18.conf ~/.tmux.conf
 
 #vim
