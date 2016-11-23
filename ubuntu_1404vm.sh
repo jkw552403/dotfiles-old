@@ -1,3 +1,6 @@
+# update
+sudo apt-get update
+
 #git
 sudo apt-get install git
 cp git/.gitignore ~/
