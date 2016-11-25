@@ -86,3 +86,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Report CPU usage for commands running longer than 10 seconds
+REPORTTIME=15
