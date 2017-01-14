@@ -1,13 +1,10 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/thomas/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,11 +50,11 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -73,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -83,9 +80,31 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="~/.pyenv/bin:$PATH"
+alias tmux="TERM=screen-256color-bce tmux -2"
+alias rm="rm -i"
+alias v="vim"
+alias p="python"
+
+# vi mode
+bindkey -v
+bindkey -M viins 'jj' vi-cmd-mode
+# make backspace worable in vi mode
+bindkey "^?" backward-delete-char
+bindkey '^R' history-incremental-search-backward
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Report CPU usage for commands running longer than 10 seconds
-REPORTTIME=15
+# npm
+. <(npm completion)
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# powerline - Please modify the powerline path.
+# Install powerline font and configure the terminal (ref: http://oomusou.io/osx/iterm2-setup/)
+. $HOME/.pyenv/versions/2.7.10/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+ZSH_THEME="powerline"
